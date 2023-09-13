@@ -4,6 +4,28 @@
 
 const convertToBase10 = str => {
   // Your code here
+  let decimal = 0;
+
+  if (str.includes('0b')) {
+    let exponent = 0;
+
+    for (let i = str.length - 1; i >= 2; i--) {
+      decimal += str[i] * Math.pow(2, exponent);
+      exponent++;
+    }
+  } else if (str.includes('0x')) {
+    let exponent = 0;
+    const letters = ['a', 'b', 'c', 'd', 'e', 'f'];
+    const values = [10, 11, 12, 13, 14, 15];
+
+    for (let i = str.length - 1; i >= 2; i--) {
+      let value = letters.includes(str[i]) ? values[letters.indexOf(str[i])] : str[i];
+      decimal += value * Math.pow(16, exponent);
+      exponent++;
+    }
+  }
+
+  return decimal;
 };
 
 /******************************************************************************/

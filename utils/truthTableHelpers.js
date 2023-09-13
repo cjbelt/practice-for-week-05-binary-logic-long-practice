@@ -15,6 +15,8 @@ const and = (A, B) => {
   else return A;
 };
 
+const not = (A) => A === 0 ? 1 : 0;
+
 // 'cb' parameter should be either 'OR' or 'AND' functions from above
 const calculateTruthTable = (A, cb, B,) => {
   console.log(cb(A, B));
@@ -24,4 +26,5 @@ module.exports = {
   or,
   and,
   calculateTruthTable,
+  not
 };

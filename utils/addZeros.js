@@ -16,6 +16,8 @@ const addZeros = (str, newLength) => {
     let newStr = str.padStart(newLength, '0');
     return newStr;
   }
+
+  return str;
 };
 
 module.exports = addZeros;
